@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Pomodoro-themed design system with tomato red and productivity colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 342 12% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 342 12% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 342 12% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 9 96% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 9 96% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 342 12% 96%;
+    --muted-foreground: 342 12% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 342 12% 16%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 342 12% 90%;
+    --input: 342 12% 92%;
+    --ring: 9 96% 60%;
+
+    /* Custom Pomodoro tokens */
+    --tomato: 9 96% 60%;
+    --tomato-light: 9 96% 70%;
+    --tomato-dark: 9 96% 50%;
+    --success: 142 76% 36%;
+    --warning: 43 96% 56%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--tomato)), hsl(var(--tomato-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 76% 46%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(342 12% 94%));
+    
+    /* Shadows */
+    --shadow-subtle: 0 2px 8px -2px hsl(var(--tomato) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--tomato) / 0.3);
+    --shadow-card: 0 4px 12px -4px hsl(342 12% 16% / 0.1);
+    
+    /* Timer specific */
+    --timer-progress: 9 96% 60%;
+    --timer-bg: 342 12% 96%;
+    --timer-text: 342 12% 16%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 

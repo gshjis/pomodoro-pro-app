@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - pomodoro-network
+
+  # Placeholder for backend service
+  # This should be configured to match your FastAPI backend
+  backend:
+    # Replace with your FastAPI backend image
+    image: your-fastapi-backend:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+    networks:
+      - pomodoro-network
+
+networks:
+  pomodoro-network:
+    driver: bridge
+
+# To use this docker-compose:
+# 1. Build your FastAPI backend image or use the existing one
+# 2. Update the backend service image name
+# 3. Create a .env file with DATABASE_URL and REDIS_URL
+# 4. Run: docker-compose up --build
